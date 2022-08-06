@@ -1,0 +1,22 @@
+{
+  "name": "soumi",
+  "version": "1.0.0",
+  "description": "Mon projet openclassrooms p3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soumeyadevs/booki.git"
+  },
+  "author": "Soumeya hadjali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soumeyadevs/booki/issues"
+  },
+  "homepage": "https://github.com/soumeyadevs/booki#readme",
+  "dependencies": {
+    "sass": "^1.54.3"
+  }
+}
