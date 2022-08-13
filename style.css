@@ -1,69 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/*container (fonctionnement)*/
+.container {
+  max-width: 1280px;
+  margin: auto;
+  position: relative;
 }
 
 /* navbar header*/
-header{
-    font-family: 'Shrikhand', cursive;
-    text-align: center;
-    box-shadow: 0px 3px 3px 1px #e8e8e8;
-    padding: 20px;
-    position: relative;
+header {
+  font-family: "Shrikhand", cursive;
+  text-align: center;
+  box-shadow: 0px 3px 3px 1px #e8e8e8;
+  padding: 20px;
+  position: relative;
 }
 
-/*main localisation*/
-main .localisation{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: #f3f3f3;
-    text-align: center;
-    padding: 25px;
+/*main localisation city*/
+.localisation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #f3f3f3;
+  text-align: center;
+  padding: 25px;
 }
-
-main .localisation i{
-    font-size: 20px ;
+.localisation i {
+  font-size: 20px;
 }
-.localisation h2{
-    font-size: large;
+.localisation h2 {
+  font-size: large;
 }
 
 /*section explorer*/
-
-.explorer{
-    padding: 30px;
-    text-align: center;
-    background-color: #fafafa;
+.explorer {
+  padding: 30px;
+  text-align: center;
+  background-color: #fafafa;
+}
+.explorer p {
+  font-weight: 300;
+  font-size: large;
+  margin: 15px 0;
+}
+.explorer button {
+  background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+  padding: 15px 20px;
+  border-radius: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  transition: all;
+  transition-duration: 0.25s;
+}
+.explorer button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
 }
 
-.explorer p{
-    font-weight: 300;
-    font-size: x-large;
-    margin: 15px 0;
+/*section fonctionnement*/
+.fonctionnement {
+  counter-reset: steps;
+  padding: 10px 20px;
+}
+.fonctionnement li {
+  margin: 0;
+  padding: 0;
+  padding: 20px;
+  padding-right: 165px;
+  margin: 1rem 0 1rem 0.75rem;
+  gap: 50px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  border-radius: 1.25rem;
+  background-color: #f6f6f6;
+  position: relative;
+}
+.fonctionnement li::before {
+  content: counter(steps);
+  counter-increment: steps;
+  background: #9356DC;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: -0.75rem;
+}
+.fonctionnement li::marker {
+  color: white;
+}
+.fonctionnement ol {
+  margin: 0;
+  padding: 0;
+  margin: 1rem 0 1rem 0.75rem;
+  gap: 35px;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .fonctionnement ol {
+    flex-direction: column;
+    gap: 0;
+    padding-right: 0;
+  }
+}
+.fonctionnement h2 {
+  margin-top: 30px;
+}
+.fonctionnement i {
+  margin-right: 1rem;
+  color: #7e7e7e;
 }
 
-/*button explorer*/
-
-.explorer button{
-    background-image: linear-gradient(0deg,#9356DC,#FF79DA);
-    padding: 15px 20px;
-    border-radius: 100px;
-    color: white;
-    font-weight: bold;
-    font-size: medium;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
-    margin-top: 10px;
-}
+/*# sourceMappingURL=style.css.map */

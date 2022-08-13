@@ -1,0 +1,111 @@
+@import "../utils/color.scss";
+@import "../utils/box.shadow.scss";
+
+/*main localisation city*/
+.localisation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 25px;
+    & i{
+        font-size: 20px ;
+    }
+    & h2{
+        font-size: large;
+    }
+}
+
+/*section explorer*/
+
+.explorer{
+    padding: 30px;
+    text-align: center;
+    background-color: #fafafa;
+& p{
+    font-weight: 300;
+    font-size: large;
+    margin: 15px 0;
+}
+& button{
+    background-image: linear-gradient(0deg,#9356DC,#FF79DA);
+    padding: 15px 20px;
+    border-radius: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: medium;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    @include box-shadow;
+    transition: all;
+    transition-duration: 0.25s;
+  
+    &:hover {
+        transform: scale(1.02);
+        opacity: 0.9;
+        background-color: white;
+        @include box-shadow;
+    }
+}
+}
+
+/*section fonctionnement*/
+
+.fonctionnement {
+    counter-reset: steps;
+    padding: 10px 20px;
+
+& li {
+    margin: 0;
+    padding: 0;
+    padding: 20px;
+    padding-right: 165px;
+    margin: 1rem 0 1rem 0.75rem;
+    gap: 50px;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+    border-radius: 1.25rem;
+    background-color: #f6f6f6;
+    position: relative;
+
+    &::before {
+        content:counter(steps);
+        counter-increment: steps;
+        background: $color1;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        position: absolute;
+        left: -0.75rem;
+      }
+    &::marker{
+        color: white;
+    }
+}
+& ol {
+    margin: 0;
+    padding: 0;
+    margin: 1rem 0 1rem 0.75rem;
+    gap: 35px;
+    display: flex;
+    @media (max-width:768px) {
+        flex-direction: column;
+        gap: 0;
+        padding-right: 0;
+    }
+}
+
+& h2{
+    margin-top: 30px;
+}
+& i{
+    margin-right: 1rem;
+    color: #7e7e7e;
+}
+}

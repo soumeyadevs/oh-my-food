@@ -1,21 +1,21 @@
 {
-  "name": "soumi",
+  "name": "ohmyfood",
   "version": "1.0.0",
-  "description": "Mon projet openclassrooms p3 ohmyfood",
+  "description": "p3 openclassrooms ohmtfood",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch ./style.scss/style.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/soumeyadevs/booki.git"
+    "url": "git+https://github.com/soumeyadevs/oh-my-food.git"
   },
-  "author": "Soumeya hadjali",
+  "author": "soumeya hadjali",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/soumeyadevs/booki/issues"
+    "url": "https://github.com/soumeyadevs/oh-my-food/issues"
   },
-  "homepage": "https://github.com/soumeyadevs/booki#readme",
+  "homepage": "https://github.com/soumeyadevs/oh-my-food#readme",
   "dependencies": {
     "sass": "^1.54.3"
   }
