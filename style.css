@@ -20,9 +20,48 @@ body {
 header {
   font-family: "Shrikhand", cursive;
   text-align: center;
-  box-shadow: 0px 3px 3px 1px #e8e8e8;
   padding: 20px;
   position: relative;
+}
+
+/*loader*/
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader__item {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  animation: jump 1s;
+  animation-iteration-count: 1;
+}
+.loader__itemContainer {
+  display: flex;
+  width: 5rem;
+  justify-content: space-between;
+}
+.loader__item--1 {
+  background-color: #9356DC;
+}
+.loader__item--2 {
+  background-color: #FF79DA;
+  animation-delay: 0.25s;
+}
+.loader__item--3 {
+  background-color: #99E2D0;
+  animation-delay: 0.5s;
 }
 
 /*main localisation city*/
@@ -34,6 +73,7 @@ header {
   background-color: #f3f3f3;
   text-align: center;
   padding: 25px;
+  box-shadow: inset 0px 3px 3px 1px #e8e8e8;
 }
 .localisation i {
   font-size: 20px;
@@ -55,7 +95,7 @@ header {
 }
 .explorer button {
   background-image: linear-gradient(0deg, #9356DC, #FF79DA);
-  padding: 15px 20px;
+  padding: 15px 30px;
   border-radius: 100px;
   color: white;
   font-weight: bold;
@@ -63,7 +103,7 @@ header {
   border: none;
   cursor: pointer;
   margin-top: 10px;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.189);
   transition: all;
   transition-duration: 0.25s;
 }
@@ -71,7 +111,7 @@ header {
   transform: scale(1.02);
   opacity: 0.9;
   background-color: white;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
 }
 
 /*section fonctionnement*/
@@ -90,6 +130,10 @@ header {
   border-radius: 1.25rem;
   background-color: #f6f6f6;
   position: relative;
+}
+.fonctionnement li:hover {
+  background-color: rgba(146, 86, 220, 0.1843137255);
+  cursor: pointer;
 }
 .fonctionnement li::before {
   content: counter(steps);
@@ -135,14 +179,10 @@ header {
   background-color: #f6f6f6;
   padding: 20px 10px;
 }
-.menus h2 {
-  padding: 30px 0px 15px 110px;
-}
 
 .contenair {
   max-width: 1280px;
   margin: auto;
-  display: flex;
 }
 @media (max-width: 768px) {
   .contenair {
@@ -150,13 +190,20 @@ header {
     flex-direction: column;
   }
 }
+.contenair h2 {
+  padding: 10px 0px 30px 0px;
+}
 
 .card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   position: relative;
+  row-gap: 30px;
 }
 .card img {
   height: 192px;
-  width: 50%;
+  width: 100%;
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
 }
@@ -168,6 +215,320 @@ header {
   top: 1rem;
   right: 0.75rem;
   position: absolute;
+}
+
+/* card description*/
+.description {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 2px 7px 13px -10px rgba(0, 0, 0, 0.35);
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-description {
+  flex: 1;
+}
+.card-description h3 {
+  margin: 0 0 5px;
+}
+
+.bloc-titre {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.btn-like {
+  font-size: 30px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+.far {
+  font-size: 30px;
+}
+
+.fas {
+  font-size: 30px;
+  position: absolute;
+  z-index: 0;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(180deg, #FF79DA, #9356DC);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition-delay: 0.5s;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.fas:hover {
+  opacity: 1;
+}
+
+.footer {
+  background-color: #353535;
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.footer-logo {
+  color: white;
+  font-family: "Shrikhand", "cursive";
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-titre {
+  margin: 5px 0;
+}
+.footer-titre:first-child {
+  margin-top: 0;
+}
+.footer-titre:last-child {
+  margin-bottom: 0;
+}
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+.footer-icon {
+  width: 20px;
+  margin-right: 5px;
+}
+
+@keyframes Appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.5rem);
+  }
+  75% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*titre-menu*/
+.titre-menu {
+  padding: 20px 20px 0;
+  font-family: "Shrikhand", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.titre-menu h2 {
+  font-size: 30px;
+}
+
+/*icon retour page*/
+.restaurantcontainer {
+  position: relative;
+}
+
+.icon-retour {
+  position: absolute;
+  left: 2rem;
+  height: 2rem;
+  width: 2rem;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #000;
+}
+
+/* bordure menu */
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+}
+.menu-img {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* submenus*/
+@media (min-width: 1024px) {
+  .submenus {
+    display: flex;
+    margin-left: 20px;
+  }
+}
+
+.submenu {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.submenu h3 {
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 7px;
+  padding-top: 30px;
+  font-weight: 400;
+}
+.submenu h3::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.menuItem {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 7px 13px -10px rgba(0, 0, 0, 0.35);
+  padding: 16px;
+  margin: 15px 0px;
+  display: flex;
+  width: 105%;
+  animation: Appear 0.6s;
+  /* icon valider*/
+}
+.menuItem__price {
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+.menuItem__confirmation {
+  background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.menuItem:hover .menuItem__confirmation {
+  margin-right: -1rem;
+}
+.menuItem__wrapIcon {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.menuItem:hover .menuItem__wrapIcon {
+  transform: rotate(0);
+}
+.menuItem__icon {
+  color: #99E2D0;
+}
+.menuItem .menu-0 {
+  animation-delay: 0s;
+}
+.menuItem .menu-1 {
+  animation-delay: 0.1s;
+}
+.menuItem .menu-2 {
+  animation-delay: 0.2s;
+}
+.menuItem .menu-3 {
+  animation-delay: 0.3s;
+}
+.menuItem .menu-4 {
+  animation-delay: 0.4s;
+}
+.menuItem .menu-5 {
+  animation-delay: 0.5s;
+}
+.menuItem .menu-6 {
+  animation-delay: 0.6s;
+}
+.menuItem .menu-7 {
+  animation-delay: 0.7s;
+}
+.menuItem .menu-8 {
+  animation-delay: 0.8s;
+}
+
+.block-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+.block-title p {
+  padding-top: 5px;
+}
+
+.commander {
+  text-align: center;
+  padding: 10px 0 40px;
+}
+.commander button {
+  background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+  padding: 15px 30px;
+  border-radius: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.189);
+  transition: all;
+  transition-duration: 0.25s;
+}
+.commander button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+  background-color: white;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */

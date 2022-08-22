@@ -1,0 +1,157 @@
+@import "../utils/animations.scss";
+
+/*titre-menu*/
+.titre-menu{
+    padding: 20px 20px 0;
+    font-family: "Shrikhand", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    h2{
+        font-size: 30px
+    }
+}
+
+/*icon retour page*/
+.restaurantcontainer {
+    position: relative;
+}
+
+.icon-retour{
+    position: absolute;
+    left: 2rem;
+    height: 2rem;
+    width: 2rem;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #000;
+}
+
+/* bordure menu */
+.menu{
+    margin-top: -4rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #f6f6f6;
+    z-index: 1;
+    position: relative;
+&-img {
+    max-width: 100%;
+    max-height: 32rem;
+    width: 100%;
+    object-fit: cover;
+}
+}
+
+/* submenus*/
+
+.submenus{
+    @media (min-width: 1024px) {
+        display: flex;
+        margin-left: 20px;
+    }
+}
+
+.submenu {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+    
+    & h3 {
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: 7px;
+        padding-top: 30px;
+        font-weight: 400;
+        &::after {
+            content: "";
+            width: 3rem;
+            height: 0.25rem;
+            background-color: $color3;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+    }
+}
+.menuItem{
+    background-color: #fff;
+    border-radius: 20px;
+    @include box-shadow;
+    padding: 16px;
+    margin: 15px 0px;
+    display: flex;
+    width: 105%;
+    animation: Appear .6s;
+
+    &__price {
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-left: 0.5rem;
+      }
+    &__confirmation {
+        background-color: $color3;
+        border-radius: 0 20px 20px 0;
+        margin: -1rem -5rem -1rem 1rem;
+        width: 4rem;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        transition-duration: 0.5s;
+      }
+    
+    &:hover &__confirmation {
+        margin-right: -1rem;
+      }
+    /* icon valider*/
+      &__wrapIcon {
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: white;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border-radius: 100px;
+        transform: rotate(180deg);
+        transition-duration: 0.5s;
+    
+     }
+    
+    &:hover &__wrapIcon {
+        transform: rotate(0);
+      }
+    
+      &__icon {
+        color: $color3;
+}
+@for $i from 0 to 9 {
+    .menu-#{$i} {
+      animation-delay: #{$i/10}s;
+    }
+}
+}
+
+.block-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+
+    & p{
+        padding-top: 5px;
+    }
+}
+
+.commander {
+    text-align: center;
+    padding: 10px 0 40px;
+& button{
+    @include btn
+}
+}
