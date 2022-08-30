@@ -52,12 +52,13 @@
 .submenus{
     @media (min-width: 1024px) {
         display: flex;
-        margin-left: 20px;
+        width: 100%;
+        justify-content: space-around;
     }
 }
 
 .submenu {
-    max-width: 100%;
+    width: 30%;
     overflow: hidden;
     padding: 0 1rem;
     
@@ -107,7 +108,7 @@
       }
     
     &:hover &__confirmation {
-        margin-right: -1rem;
+        transform: translate(-4em);
       }
     /* icon valider*/
       &__wrapIcon {
@@ -130,11 +131,18 @@
       &__icon {
         color: $color3;
 }
+    &:hover > div.block-title >p.menuItem__description{
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        width: 150px;
+}
+}
 @for $i from 0 to 9 {
     .menu-#{$i} {
-      animation-delay: #{$i/10}s;
+      animation-delay: #{$i/8}s;
     }
-}
 }
 
 .block-title {
@@ -142,7 +150,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     flex: 1;
-
+    min-width: 88%;
     & p{
         padding-top: 5px;
     }

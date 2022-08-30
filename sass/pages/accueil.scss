@@ -217,22 +217,51 @@
     border: none;
     background: none;
     padding: 0;
+    align-items:center;
+    justify-content:center;
+} 
+/*
+.btn-like{
+    fill: transparent;
+    stroke: black;
+    stroke-width: 30;
+    cursor: pointer;
+    position: relative;
+}
+svg {
+    overflow: visible;
+    width: 27px;
+  }
+path {
+    stroke-dashoffset: 0;
+    transform-origin: center;
 }
 
-.far{
-    font-size: 30px;
+.heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
 }
-.fas{
-    font-size: 30px;
+.heart-background:hover path{
+    transform: scale(1.02);
+    opacity: 0.9;
+    background-color: white;
+}
+*/
+
+.icon-fas{
     position: absolute;
     z-index: 0;
-    top: 2px;
+    top: 3px;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: linear-gradient(180deg, #FF79DA, #9356DC);
     background-size: 100%;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     transition-delay: 0.5s;
     transition: opacity 0.5s ease-out;
