@@ -58,10 +58,21 @@
 }
 
 .submenu {
+    @media (min-width: 1024px){
     width: 30%;
     overflow: hidden;
     padding: 0 1rem;
-    
+    }
+    @media (max-width: 768px){
+    width: 98%;
+    overflow: hidden;
+    padding: 0 2rem;
+    }
+    @media (max-width: 500px){
+    width: 96%;
+    overflow: hidden;
+    padding: 0 1rem;
+    }
     & h3 {
         text-transform: uppercase;
         position: relative;
@@ -87,6 +98,7 @@
     margin: 15px 0px;
     display: flex;
     width: 105%;
+    cursor: pointer;
     animation: Appear .6s;
 
     &__price {
@@ -110,6 +122,9 @@
     &:hover &__confirmation {
         transform: translate(-4em);
       }
+    &:hover &__price{
+        transform: translate(-4em);
+    }
     /* icon valider*/
       &__wrapIcon {
         height: 1.6rem;
@@ -137,6 +152,13 @@
         overflow: hidden;
         display: block;
         width: 150px;
+    &:hover > div.__price {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        width: 150px
+    }
 }
 }
 @for $i from 0 to 9 {

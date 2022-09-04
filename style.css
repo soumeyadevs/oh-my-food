@@ -123,13 +123,17 @@ header {
   margin: 0;
   padding: 0;
   padding: 20px;
-  padding-right: 165px;
   margin: 1rem 0 1rem 0.75rem;
   gap: 50px;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
   border-radius: 1.25rem;
   background-color: #f6f6f6;
   position: relative;
+}
+@media (min-width: 1040px) {
+  .fonctionnement li {
+    padding-right: 165px;
+  }
 }
 .fonctionnement li:hover {
   background-color: rgba(146, 86, 220, 0.1843137255);
@@ -196,10 +200,21 @@ header {
 
 .card {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   position: relative;
-  row-gap: 30px;
+}
+@media (max-width: 1024px) {
+  .card {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+@media (min-width: 1040px) {
+  .card {
+    flex-direction: row;
+    justify-content: space-around;
+    row-gap: 30px;
+  }
 }
 .card img {
   height: 192px;
@@ -215,6 +230,12 @@ header {
   top: 1rem;
   right: 0.75rem;
   position: absolute;
+}
+
+@media (min-width: 1040px) {
+  .card a {
+    width: 48%;
+  }
 }
 
 /* card description*/
@@ -253,6 +274,27 @@ header {
   justify-content: center;
 }
 
+.icon-fas {
+  position: absolute;
+  z-index: 0;
+  top: 3px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(180deg, #FF79DA, #9356DC);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition-delay: 0.5s;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+}
+.icon-fas:hover {
+  opacity: 1;
+}
+
+/*coeur svg*/
 /*
 .btn-like{
     fill: transparent;
@@ -283,33 +325,13 @@ path {
     background-color: white;
 }
 */
-.icon-fas {
-  position: absolute;
-  z-index: 0;
-  top: 3px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(180deg, #FF79DA, #9356DC);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition-delay: 0.5s;
-  transition: opacity 0.5s ease-out;
-  opacity: 0;
-}
-.icon-fas:hover {
-  opacity: 1;
-}
-
 .footer {
   background-color: #353535;
 }
 .footer .container {
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding: 20px;
 }
 .footer-logo {
   color: white;
@@ -429,10 +451,26 @@ path {
   }
 }
 
-.submenu {
-  width: 30%;
-  overflow: hidden;
-  padding: 0 1rem;
+@media (min-width: 1024px) {
+  .submenu {
+    width: 30%;
+    overflow: hidden;
+    padding: 0 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .submenu {
+    width: 98%;
+    overflow: hidden;
+    padding: 0 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .submenu {
+    width: 96%;
+    overflow: hidden;
+    padding: 0 1rem;
+  }
 }
 .submenu h3 {
   text-transform: uppercase;
@@ -459,6 +497,7 @@ path {
   margin: 15px 0px;
   display: flex;
   width: 105%;
+  cursor: pointer;
   animation: Appear 0.6s;
   /* icon valider*/
 }
@@ -482,6 +521,9 @@ path {
 .menuItem:hover .menuItem__confirmation {
   transform: translate(-4em);
 }
+.menuItem:hover .menuItem__price {
+  transform: translate(-4em);
+}
 .menuItem__wrapIcon {
   height: 1.6rem;
   width: 1.6rem;
@@ -500,6 +542,13 @@ path {
   color: #99E2D0;
 }
 .menuItem:hover > div.block-title > p.menuItem__description {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  width: 150px;
+}
+.menuItem:hover > div.block-title > p.menuItem__description:hover > div.__price {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
